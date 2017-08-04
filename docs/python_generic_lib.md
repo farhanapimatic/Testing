@@ -13,12 +13,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=Hello%20world-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=GlobalWeather-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Helloworld SDK package in a new project.
+The following section explains how to use the Globalweather SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -28,17 +28,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=Hello%20world-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=GlobalWeather-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=Hello%20world-Python&projectName=helloworld)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=GlobalWeather-Python&projectName=globalweather)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=Hello%20world-Python&projectName=helloworld)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=GlobalWeather-Python&projectName=globalweather)
 
 Name the directory as "test"
 
@@ -46,7 +46,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=Hello%20world-Python&projectName=helloworld)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=GlobalWeather-Python&projectName=globalweather)
 
 Name it "testsdk"
 
@@ -55,10 +55,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from helloworld.helloworld_client import HelloworldClient
+from globalweather.globalweather_client import GlobalweatherClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=Hello%20world-Python&libraryName=helloworld.helloworld_client&projectName=helloworld)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=GlobalWeather-Python&libraryName=globalweather.globalweather_client&projectName=globalweather)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -66,7 +66,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=Hello%20world-Python&libraryName=helloworld.helloworld_client&projectName=helloworld)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=GlobalWeather-Python&libraryName=globalweather.globalweather_client&projectName=globalweather)
 
 
 ## How to Test
@@ -87,7 +87,7 @@ API client can be initialized as following.
 
 ```python
 
-client = HelloworldClient()
+client = GlobalweatherClient()
 ```
 
 
@@ -96,31 +96,291 @@ client = HelloworldClient()
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [HelloworldController](#helloworld_controller)
+* [GlobalWeatherSoapController](#global_weather_soap_controller)
+* [GlobalWeatherSoap12Controller](#global_weather_soap12_controller)
+* [GlobalWeatherHttpGetController](#global_weather_http_get_controller)
+* [GlobalWeatherHttpPostController](#global_weather_http_post_controller)
 
-## <a name="helloworld_controller"></a>![Class: ](https://apidocs.io/img/class.png ".HelloworldController") HelloworldController
+## <a name="global_weather_soap_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoapController") GlobalWeatherSoapController
 
 ### Get controller instance
 
-An instance of the ``` HelloworldController ``` class can be accessed from the API Client.
+An instance of the ``` GlobalWeatherSoapController ``` class can be accessed from the API Client.
 
 ```python
- helloworld_client = client.helloworld
+ global_weather_soap_client = client.global_weather_soap
 ```
 
-### <a name="get_helloworld"></a>![Method: ](https://apidocs.io/img/method.png ".HelloworldController.get_helloworld") get_helloworld
+### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.create_get_weather") create_get_weather
 
-> TODO: Add a method description
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get weather report for all major cities around the world.
 
 ```python
-def get_helloworld(self)
+def create_get_weather(self,
+                           body)
 ```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
 
 #### Example Usage
 
 ```python
+body = GetWeatherSoapIn()
 
-result = helloworld_client.get_helloworld()
+result = global_weather_soap_client.create_get_weather(body)
+
+```
+
+
+### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.create_get_cities_by_country") create_get_cities_by_country
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get all major cities by country name(full / part).
+
+```python
+def create_get_cities_by_country(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = GetCitiesByCountrySoapIn()
+
+result = global_weather_soap_client.create_get_cities_by_country(body)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="global_weather_soap12_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoap12Controller") GlobalWeatherSoap12Controller
+
+### Get controller instance
+
+An instance of the ``` GlobalWeatherSoap12Controller ``` class can be accessed from the API Client.
+
+```python
+ global_weather_soap_12_client = client.global_weather_soap_12
+```
+
+### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.create_get_weather") create_get_weather
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get weather report for all major cities around the world.
+
+```python
+def create_get_weather(self,
+                           body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = GetWeatherSoapIn()
+
+result = global_weather_soap_12_client.create_get_weather(body)
+
+```
+
+
+### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.create_get_cities_by_country") create_get_cities_by_country
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get all major cities by country name(full / part).
+
+```python
+def create_get_cities_by_country(self,
+                                     body)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| body |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+body = GetCitiesByCountrySoapIn()
+
+result = global_weather_soap_12_client.create_get_cities_by_country(body)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="global_weather_http_get_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpGetController") GlobalWeatherHttpGetController
+
+### Get controller instance
+
+An instance of the ``` GlobalWeatherHttpGetController ``` class can be accessed from the API Client.
+
+```python
+ global_weather_http_get_client = client.global_weather_http_get
+```
+
+### <a name="get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.get_weather") get_weather
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get weather report for all major cities around the world.
+
+```python
+def get_weather(self,
+                    city_name,
+                    country_name)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| cityName |  ``` Required ```  | TODO: Add a parameter description |
+| countryName |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+city_name = 'CityName'
+country_name = 'CountryName'
+
+result = global_weather_http_get_client.get_weather(city_name, country_name)
+
+```
+
+
+### <a name="get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.get_cities_by_country") get_cities_by_country
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get all major cities by country name(full / part).
+
+```python
+def get_cities_by_country(self,
+                              country_name)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| countryName |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+country_name = 'CountryName'
+
+result = global_weather_http_get_client.get_cities_by_country(country_name)
+
+```
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="global_weather_http_post_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpPostController") GlobalWeatherHttpPostController
+
+### Get controller instance
+
+An instance of the ``` GlobalWeatherHttpPostController ``` class can be accessed from the API Client.
+
+```python
+ global_weather_http_post_client = client.global_weather_http_post
+```
+
+### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.create_get_weather") create_get_weather
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get weather report for all major cities around the world.
+
+```python
+def create_get_weather(self,
+                           city_name,
+                           country_name)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| cityName |  ``` Required ```  | TODO: Add a parameter description |
+| countryName |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+city_name = 'CityName'
+country_name = 'CountryName'
+
+result = global_weather_http_post_client.create_get_weather(city_name, country_name)
+
+```
+
+
+### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.create_get_cities_by_country") create_get_cities_by_country
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Get all major cities by country name(full / part).
+
+```python
+def create_get_cities_by_country(self,
+                                     country_name)
+```
+
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| countryName |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```python
+country_name = 'CountryName'
+
+result = global_weather_http_post_client.create_get_cities_by_country(country_name)
 
 ```
 
