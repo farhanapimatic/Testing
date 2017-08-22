@@ -1,5 +1,7 @@
 # Getting started
 
+this is not the way we think.
+
 ## How to Build
 
 
@@ -29,15 +31,15 @@ Now follow the steps mentioned below to build your SDK:
 
 3. In ```Select root directory```, provide path to the unzipped archive for the generated code. Once the path is set and the Project becomes visible under ```Projects``` click ```Finish```
 
-![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=GlobalWeather-GoLang&projectName=globalweather_lib)
+![Importing SDK into Eclipse - Step 3](https://apidocs.io/illustration/go?step=import2&workspaceFolder=BibcodeQuery-GoLang&projectName=bibcodequery_lib)
 
 4. The Go library will be imported and its files will be visible in the Project Explorer
 
-![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=globalweather_lib)
+![Importing SDK into Eclipse - Step 4](https://apidocs.io/illustration/go?step=import3&projectName=bibcodequery_lib)
 
 ## How to Use
 
-The following section explains how to use the GlobalweatherLib library in a new project.
+The following section explains how to use the BibcodequeryLib library in a new project.
 
 ### 1. Add a new Test Project
 
@@ -51,19 +53,19 @@ Name the Project as ```Test``` and click ```Finish```
 
 Create a new directory in the ```src``` directory of this project
 
-![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=globalweather_lib)
+![Create a new Maven Project - Step 2](https://apidocs.io/illustration/go?step=createNewProject2&projectName=bibcodequery_lib)
 
 Name it ```test.com```
 
-![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=globalweather_lib)
+![Create a new Maven Project - Step 3](https://apidocs.io/illustration/go?step=createNewProject3&projectName=bibcodequery_lib)
 
 Now create a new file inside ```src/test.com```
 
-![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=globalweather_lib)
+![Create a new Maven Project - Step 4](https://apidocs.io/illustration/go?step=createNewProject4&projectName=bibcodequery_lib)
 
 Name it ```testsdk.go```
 
-![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=globalweather_lib)
+![Create a new Maven Project - Step 5](https://apidocs.io/illustration/go?step=createNewProject5&projectName=bibcodequery_lib)
 
 In this Go file, you can start adding code to initialize the client library. Sample code to initialize the client library and using its methods is given in the subsequent sections.
 
@@ -73,7 +75,7 @@ You need to import your generated library in this project in order to make use o
 
 Right click on the project name and click on ```Properties```
 
-![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=globalweather_lib)
+![Adding dependency to the client library - Step 1](https://apidocs.io/illustration/go?step=testProject0&projectName=bibcodequery_lib)
 
 Choose ```Go Compiler``` from the side menu. Check ```Use project specific settings``` and uncheck ```Use same value as the GOPATH environment variable.```. By default, the GOPATH value from the environment variables will be visible in ```Eclipse GOPATH```. Do not remove this as this points to the unirest dependency.
 
@@ -81,7 +83,7 @@ Choose ```Go Compiler``` from the side menu. Check ```Use project specific setti
 
 Append the library path to this GOPATH
 
-![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=GlobalWeather-GoLang)
+![Adding dependency to the client library - Step 3](https://apidocs.io/illustration/go?step=testProject2&workspaceFolder=BibcodeQuery-GoLang)
 
 Once the path is appended, click on ```OK```
 
@@ -89,305 +91,75 @@ Once the path is appended, click on ```OK```
 
 Right click on the project name and click on ```Build Project```
 
-![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=globalweather_lib)
+![Build Project](https://apidocs.io/illustration/go?step=buildProject&projectName=bibcodequery_lib)
 
 ### 4. Run the Test Project
 
 If the build is successful, right click on your Go file and click on ```Run As``` -> ```Go Application```
 
-![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=globalweather_lib)
+![Run Project](https://apidocs.io/illustration/go?step=runProject&projectName=bibcodequery_lib)
+
+## Initialization
+
+### Authentication
+In order to setup authentication of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthAccessToken | OAuth 2.0 Access Token |
+
+
+To configure these for your generated code, open the file "Configuration.go" and edit it's contents.
+
 
 # Class Reference
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [globalweathersoap_pkg](#globalweathersoap_pkg)
-* [globalweathersoap12_pkg](#globalweathersoap12_pkg)
-* [globalweatherhttpget_pkg](#globalweatherhttpget_pkg)
-* [globalweatherhttppost_pkg](#globalweatherhttppost_pkg)
+* [bibcodequerybinding_pkg](#bibcodequerybinding_pkg)
 
-## <a name="globalweathersoap_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".globalweathersoap_pkg") globalweathersoap_pkg
+## <a name="bibcodequerybinding_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".bibcodequerybinding_pkg") bibcodequerybinding_pkg
 
 ### Get instance
 
-Factory for the ``` GLOBALWEATHERSOAP ``` interface can be accessed from the package globalweathersoap_pkg.
+Factory for the ``` BIBCODEQUERYBINDING ``` interface can be accessed from the package bibcodequerybinding_pkg.
 
 ```go
-globalWeatherSoap := globalweathersoap_pkg.NewGLOBALWEATHERSOAP()
+bibcodeQueryBinding := bibcodequerybinding_pkg.NewBIBCODEQUERYBINDING()
 ```
 
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".globalweathersoap_pkg.CreateGetWeather") CreateGetWeather
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".bibcodequerybinding_pkg.GetBibcode") GetBibcode
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 
 ```go
-func (me *GLOBALWEATHERSOAP_IMPL) CreateGetWeather(body *models_pkg.GetWeatherSoapIn)(*models_pkg.GetWeatherSoapOut,error)
+func (me *BIBCODEQUERYBINDING_IMPL) GetBibcode(
+            bibcode string,
+            dbKey string,
+            dataType string)(*models_pkg.ReturnBibcode,error)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 #### Example Usage
 
 ```go
-var body *models_pkg.GetWeatherSoapIn
-
-var result *models_pkg.GetWeatherSoapOut
-result,_ = globalWeatherSoap.CreateGetWeather(body)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".globalweathersoap_pkg.CreateGetCitiesByCountry") CreateGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```go
-func (me *GLOBALWEATHERSOAP_IMPL) CreateGetCitiesByCountry(body *models_pkg.GetCitiesByCountrySoapIn)(*models_pkg.GetCitiesByCountrySoapOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.GetCitiesByCountrySoapIn
-
-var result *models_pkg.GetCitiesByCountrySoapOut
-result,_ = globalWeatherSoap.CreateGetCitiesByCountry(body)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="globalweathersoap12_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".globalweathersoap12_pkg") globalweathersoap12_pkg
-
-### Get instance
-
-Factory for the ``` GLOBALWEATHERSOAP12 ``` interface can be accessed from the package globalweathersoap12_pkg.
-
-```go
-globalWeatherSoap12 := globalweathersoap12_pkg.NewGLOBALWEATHERSOAP12()
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".globalweathersoap12_pkg.CreateGetWeather") CreateGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```go
-func (me *GLOBALWEATHERSOAP12_IMPL) CreateGetWeather(body *models_pkg.GetWeatherSoapIn)(*models_pkg.GetWeatherSoapOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.GetWeatherSoapIn
-
-var result *models_pkg.GetWeatherSoapOut
-result,_ = globalWeatherSoap12.CreateGetWeather(body)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".globalweathersoap12_pkg.CreateGetCitiesByCountry") CreateGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```go
-func (me *GLOBALWEATHERSOAP12_IMPL) CreateGetCitiesByCountry(body *models_pkg.GetCitiesByCountrySoapIn)(*models_pkg.GetCitiesByCountrySoapOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-var body *models_pkg.GetCitiesByCountrySoapIn
-
-var result *models_pkg.GetCitiesByCountrySoapOut
-result,_ = globalWeatherSoap12.CreateGetCitiesByCountry(body)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="globalweatherhttpget_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".globalweatherhttpget_pkg") globalweatherhttpget_pkg
-
-### Get instance
-
-Factory for the ``` GLOBALWEATHERHTTPGET ``` interface can be accessed from the package globalweatherhttpget_pkg.
-
-```go
-globalWeatherHttpGet := globalweatherhttpget_pkg.NewGLOBALWEATHERHTTPGET()
-```
-
-### <a name="get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".globalweatherhttpget_pkg.GetWeather") GetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```go
-func (me *GLOBALWEATHERHTTPGET_IMPL) GetWeather(
-            cityName string,
-            countryName string)(*models_pkg.GetWeatherHttpGetOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-cityName := "CityName"
-countryName := "CountryName"
-
-var result *models_pkg.GetWeatherHttpGetOut
-result,_ = globalWeatherHttpGet.GetWeather(cityName, countryName)
-
-```
-
-
-### <a name="get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".globalweatherhttpget_pkg.GetCitiesByCountry") GetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```go
-func (me *GLOBALWEATHERHTTPGET_IMPL) GetCitiesByCountry(countryName string)(*models_pkg.GetCitiesByCountryHttpGetOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-countryName := "CountryName"
-
-var result *models_pkg.GetCitiesByCountryHttpGetOut
-result,_ = globalWeatherHttpGet.GetCitiesByCountry(countryName)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="globalweatherhttppost_pkg"></a>![Class: ](https://apidocs.io/img/class.png ".globalweatherhttppost_pkg") globalweatherhttppost_pkg
-
-### Get instance
-
-Factory for the ``` GLOBALWEATHERHTTPPOST ``` interface can be accessed from the package globalweatherhttppost_pkg.
-
-```go
-globalWeatherHttpPost := globalweatherhttppost_pkg.NewGLOBALWEATHERHTTPPOST()
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".globalweatherhttppost_pkg.CreateGetWeather") CreateGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```go
-func (me *GLOBALWEATHERHTTPPOST_IMPL) CreateGetWeather(
-            cityName string,
-            countryName string)(*models_pkg.GetWeatherHttpPostOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-cityName := "CityName"
-countryName := "CountryName"
-
-var result *models_pkg.GetWeatherHttpPostOut
-result,_ = globalWeatherHttpPost.CreateGetWeather(cityName, countryName)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".globalweatherhttppost_pkg.CreateGetCitiesByCountry") CreateGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```go
-func (me *GLOBALWEATHERHTTPPOST_IMPL) CreateGetCitiesByCountry(countryName string)(*models_pkg.GetCitiesByCountryHttpPostOut,error)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-#### Example Usage
-
-```go
-countryName := "CountryName"
-
-var result *models_pkg.GetCitiesByCountryHttpPostOut
-result,_ = globalWeatherHttpPost.CreateGetCitiesByCountry(countryName)
+bibcode := "bibcode"
+dbKey := "db_key"
+dataType := "data_type"
+
+var result *models_pkg.ReturnBibcode
+result,_ = bibcodeQueryBinding.GetBibcode(bibcode, dbKey, dataType)
 
 ```
 

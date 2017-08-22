@@ -1,5 +1,7 @@
 # Getting started
 
+this is not the way we think.
+
 ## How to Build
 
 
@@ -13,12 +15,12 @@ This should display the version of the PIP Dependency Manager installed if your 
 * Using command line, navigate to the directory containing the generated files (including ```requirements.txt```) for the SDK.
 * Run the command ```pip install -r requirements.txt```. This should install all the required dependencies.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=GlobalWeather-Python)
+![Building SDK - Step 1](https://apidocs.io/illustration/python?step=installDependencies&workspaceFolder=BibcodeQuery-Python)
 
 
 ## How to Use
 
-The following section explains how to use the Globalweather SDK package in a new project.
+The following section explains how to use the Bibcodequery SDK package in a new project.
 
 ### 1. Open Project in an IDE
 
@@ -28,17 +30,17 @@ Open up a Python IDE like PyCharm. The basic workflow presented here is also app
 
 Click on ```Open``` in PyCharm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=GlobalWeather-Python)     
+![Open project in PyCharm - Step 2](https://apidocs.io/illustration/python?step=openProject0&workspaceFolder=BibcodeQuery-Python)     
 
 The project files will be displayed in the side bar as follows:
 
-![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=GlobalWeather-Python&projectName=globalweather)     
+![Open project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=openProject1&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=GlobalWeather-Python&projectName=globalweather)
+![Add a new project in PyCharm - Step 1](https://apidocs.io/illustration/python?step=createDirectory&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)
 
 Name the directory as "test"
 
@@ -46,7 +48,7 @@ Name the directory as "test"
    
 Add a python file to this project with the name "testsdk"
 
-![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=GlobalWeather-Python&projectName=globalweather)
+![Add a new project in PyCharm - Step 3](https://apidocs.io/illustration/python?step=createFile&workspaceFolder=BibcodeQuery-Python&projectName=bibcodequery)
 
 Name it "testsdk"
 
@@ -55,10 +57,10 @@ Name it "testsdk"
 In your python file you will be required to import the generated python library using the following code lines
 
 ```Python
-from globalweather.globalweather_client import GlobalweatherClient
+from bibcodequery.bibcodequery_client import BibcodequeryClient
 ```
 
-![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=GlobalWeather-Python&libraryName=globalweather.globalweather_client&projectName=globalweather)
+![Add a new project in PyCharm - Step 4](https://apidocs.io/illustration/python?step=projectFiles&workspaceFolder=BibcodeQuery-Python&libraryName=bibcodequery.bibcodequery_client&projectName=bibcodequery)
 
 After this you can write code to instantiate an API client object, get a controller object and  make API calls. Sample code is given in the subsequent sections.
 
@@ -66,7 +68,7 @@ After this you can write code to instantiate an API client object, get a control
 
 To run the file within your test project, right click on your Python file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=GlobalWeather-Python&libraryName=globalweather.globalweather_client&projectName=globalweather)
+![Run Test Project - Step 1](https://apidocs.io/illustration/python?step=runProject&workspaceFolder=BibcodeQuery-Python&libraryName=bibcodequery.bibcodequery_client&projectName=bibcodequery)
 
 
 ## How to Test
@@ -81,13 +83,22 @@ runner. You can run the tests as follows:
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| o_auth_access_token | OAuth 2.0 Access Token |
+
+
 
 API client can be initialized as following.
 
 ```python
+# Configuration parameters and credentials
+o_auth_access_token = 'o_auth_access_token' # OAuth 2.0 Access Token
 
-client = GlobalweatherClient()
+client = BibcodequeryClient(o_auth_access_token)
 ```
 
 
@@ -96,291 +107,49 @@ client = GlobalweatherClient()
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [GlobalWeatherSoapController](#global_weather_soap_controller)
-* [GlobalWeatherSoap12Controller](#global_weather_soap12_controller)
-* [GlobalWeatherHttpGetController](#global_weather_http_get_controller)
-* [GlobalWeatherHttpPostController](#global_weather_http_post_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 
-## <a name="global_weather_soap_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoapController") GlobalWeatherSoapController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get controller instance
 
-An instance of the ``` GlobalWeatherSoapController ``` class can be accessed from the API Client.
+An instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```python
- global_weather_soap_client = client.global_weather_soap
+ bibcode_query_binding_client = client.bibcode_query_binding
 ```
 
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.create_get_weather") create_get_weather
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.get_bibcode") get_bibcode
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 ```python
-def create_get_weather(self,
-                           body)
+def get_bibcode(self,
+                    bibcode,
+                    db_key,
+                    data_type)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```python
-body = GetWeatherSoapIn()
-
-result = global_weather_soap_client.create_get_weather(body)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.create_get_cities_by_country") create_get_cities_by_country
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-```python
-def create_get_cities_by_country(self,
-                                     body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = GetCitiesByCountrySoapIn()
-
-result = global_weather_soap_client.create_get_cities_by_country(body)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_soap12_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoap12Controller") GlobalWeatherSoap12Controller
-
-### Get controller instance
-
-An instance of the ``` GlobalWeatherSoap12Controller ``` class can be accessed from the API Client.
-
-```python
- global_weather_soap_12_client = client.global_weather_soap_12
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.create_get_weather") create_get_weather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-```python
-def create_get_weather(self,
-                           body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = GetWeatherSoapIn()
-
-result = global_weather_soap_12_client.create_get_weather(body)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.create_get_cities_by_country") create_get_cities_by_country
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-```python
-def create_get_cities_by_country(self,
-                                     body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-body = GetCitiesByCountrySoapIn()
-
-result = global_weather_soap_12_client.create_get_cities_by_country(body)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_get_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpGetController") GlobalWeatherHttpGetController
-
-### Get controller instance
-
-An instance of the ``` GlobalWeatherHttpGetController ``` class can be accessed from the API Client.
-
-```python
- global_weather_http_get_client = client.global_weather_http_get
-```
-
-### <a name="get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.get_weather") get_weather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-```python
-def get_weather(self,
-                    city_name,
-                    country_name)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-city_name = 'CityName'
-country_name = 'CountryName'
-
-result = global_weather_http_get_client.get_weather(city_name, country_name)
-
-```
-
-
-### <a name="get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.get_cities_by_country") get_cities_by_country
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-```python
-def get_cities_by_country(self,
-                              country_name)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-country_name = 'CountryName'
-
-result = global_weather_http_get_client.get_cities_by_country(country_name)
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_post_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpPostController") GlobalWeatherHttpPostController
-
-### Get controller instance
-
-An instance of the ``` GlobalWeatherHttpPostController ``` class can be accessed from the API Client.
-
-```python
- global_weather_http_post_client = client.global_weather_http_post
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.create_get_weather") create_get_weather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-```python
-def create_get_weather(self,
-                           city_name,
-                           country_name)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-city_name = 'CityName'
-country_name = 'CountryName'
-
-result = global_weather_http_post_client.create_get_weather(city_name, country_name)
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.create_get_cities_by_country") create_get_cities_by_country
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-```python
-def create_get_cities_by_country(self,
-                                     country_name)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```python
-country_name = 'CountryName'
-
-result = global_weather_http_post_client.create_get_cities_by_country(country_name)
+bibcode = 'bibcode'
+db_key = 'db_key'
+data_type = 'data_type'
+
+result = bibcode_query_binding_client.get_bibcode(bibcode, db_key, data_type)
 
 ```
 

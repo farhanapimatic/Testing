@@ -1,5 +1,7 @@
 # Getting started
 
+this is not the way we think.
+
 ## How to Build
 
 The generated code has dependencies over external libraries like UniRest. These dependencies are defined in the ```composer.json``` file that comes with the SDK. 
@@ -10,7 +12,7 @@ Open command prompt and type ```composer --version```. This should display the c
 * Using command line, navigate to the directory containing the generated files (including ```composer.json```) for the SDK. 
 * Run the command ```composer install```. This should install all the required dependencies and create the ```vendor``` directory in your project directory.
 
-![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=GlobalWeather-PHP)
+![Building SDK - Step 1](https://apidocs.io/illustration/php?step=installDependencies&workspaceFolder=BibcodeQuery-PHP)
 
 ### [For Windows Users Only] Configuring CURL Certificate Path in php.ini
 
@@ -28,35 +30,35 @@ CURL used to include a list of accepted CAs, but no longer bundles ANY CA certs.
 
 ## How to Use
 
-The following section explains how to use the GlobalWeather library in a new project.
+The following section explains how to use the BibcodeQuery library in a new project.
 
 ### 1. Open Project in an IDE
 
 Open an IDE for PHP like PhpStorm. The basic workflow presented here is also applicable if you prefer using a different editor or IDE.
 
-![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=GlobalWeather-PHP)
+![Open project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=openIDE&workspaceFolder=BibcodeQuery-PHP)
 
 Click on ```Open``` in PhpStorm to browse to your generated SDK directory and then click ```OK```.
 
-![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=GlobalWeather-PHP)     
+![Open project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=openProject0&workspaceFolder=BibcodeQuery-PHP)     
 
 ### 2. Add a new Test Project
 
 Create a new directory by right clicking on the solution name as shown below:
 
-![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=GlobalWeather-PHP)
+![Add a new project in PHPStorm - Step 1](https://apidocs.io/illustration/php?step=createDirectory&workspaceFolder=BibcodeQuery-PHP)
 
 Name the directory as "test"
 
-![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=GlobalWeather-PHP)
+![Add a new project in PHPStorm - Step 2](https://apidocs.io/illustration/php?step=nameDirectory&workspaceFolder=BibcodeQuery-PHP)
    
 Add a PHP file to this project
 
-![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=GlobalWeather-PHP)
+![Add a new project in PHPStorm - Step 3](https://apidocs.io/illustration/php?step=createFile&workspaceFolder=BibcodeQuery-PHP)
 
 Name it "testSDK"
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=GlobalWeather-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=nameFile&workspaceFolder=BibcodeQuery-PHP)
 
 Depending on your project setup, you might need to include composer's autoloader in your PHP code to enable auto loading of classes.
 
@@ -66,7 +68,7 @@ require_once "../vendor/autoload.php";
 
 It is important that the path inside require_once correctly points to the file ```autoload.php``` inside the vendor directory created during dependency installations.
 
-![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=GlobalWeather-PHP)
+![Add a new project in PHPStorm - Step 4](https://apidocs.io/illustration/php?step=projectFiles&workspaceFolder=BibcodeQuery-PHP)
 
 After this you can add code to initialize the client library and acquire the instance of a Controller class. Sample code to initialize the client library and using controller methods is given in the subsequent sections.
 
@@ -76,23 +78,23 @@ To run your project you must set the Interpreter for your project. Interpreter i
 
 Open ```Settings``` from ```File``` menu.
 
-![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=GlobalWeather-PHP)
+![Run Test Project - Step 1](https://apidocs.io/illustration/php?step=openSettings&workspaceFolder=BibcodeQuery-PHP)
 
 Select ```PHP``` from within ```Languages & Frameworks```
 
-![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=GlobalWeather-PHP)
+![Run Test Project - Step 2](https://apidocs.io/illustration/php?step=setInterpreter0&workspaceFolder=BibcodeQuery-PHP)
 
 Browse for Interpreters near the ```Interpreter``` option and choose your interpreter.
 
-![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=GlobalWeather-PHP)
+![Run Test Project - Step 3](https://apidocs.io/illustration/php?step=setInterpreter1&workspaceFolder=BibcodeQuery-PHP)
 
 Once the interpreter is selected, click ```OK```
 
-![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=GlobalWeather-PHP)
+![Run Test Project - Step 4](https://apidocs.io/illustration/php?step=setInterpreter2&workspaceFolder=BibcodeQuery-PHP)
 
 To run your project, right click on your PHP file inside your Test project and click on ```Run```
 
-![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=GlobalWeather-PHP)
+![Run Test Project - Step 5](https://apidocs.io/illustration/php?step=runProject&workspaceFolder=BibcodeQuery-PHP)
 
 ## How to Test
 
@@ -106,13 +108,21 @@ You can change the PHPUnit test configuration in the `phpunit.xml` file.
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication and initialization of the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthAccessToken | OAuth 2.0 Access Token |
+
+
 
 API client can be initialized as following.
 
 ```php
+$oAuthAccessToken = 'oAuthAccessToken'; // OAuth 2.0 Access Token
 
-$client = new GlobalWeatherLib\GlobalWeatherClient();
+$client = new BibcodeQueryLib\BibcodeQueryClient($oAuthAccessToken);
 ```
 
 
@@ -120,293 +130,50 @@ $client = new GlobalWeatherLib\GlobalWeatherClient();
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [GlobalWeatherSoapController](#global_weather_soap_controller)
-* [GlobalWeatherSoap12Controller](#global_weather_soap12_controller)
-* [GlobalWeatherHttpGetController](#global_weather_http_get_controller)
-* [GlobalWeatherHttpPostController](#global_weather_http_post_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 
-## <a name="global_weather_soap_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoapController") GlobalWeatherSoapController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` GlobalWeatherSoapController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```php
-$globalWeatherSoap = $client->getGlobalWeatherSoap();
+$bibcodeQueryBinding = $client->getBibcodeQueryBinding();
 ```
 
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.createGetWeather") createGetWeather
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 
 ```php
-function createGetWeather($body)
+function getBibcode(
+        $bibcode,
+        $dbKey,
+        $dataType)
 ```
 
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
 #### Example Usage
 
 ```php
-$body = new GetWeatherSoapIn();
-
-$result = $globalWeatherSoap->createGetWeather($body);
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```php
-function createGetCitiesByCountry($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new GetCitiesByCountrySoapIn();
-
-$result = $globalWeatherSoap->createGetCitiesByCountry($body);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_soap12_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoap12Controller") GlobalWeatherSoap12Controller
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherSoap12Controller ``` class can be accessed from the API Client.
-
-```php
-$globalWeatherSoap12 = $client->getGlobalWeatherSoap12();
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.createGetWeather") createGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```php
-function createGetWeather($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new GetWeatherSoapIn();
-
-$result = $globalWeatherSoap12->createGetWeather($body);
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```php
-function createGetCitiesByCountry($body)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$body = new GetCitiesByCountrySoapIn();
-
-$result = $globalWeatherSoap12->createGetCitiesByCountry($body);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_get_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpGetController") GlobalWeatherHttpGetController
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherHttpGetController ``` class can be accessed from the API Client.
-
-```php
-$globalWeatherHttpGet = $client->getGlobalWeatherHttpGet();
-```
-
-### <a name="get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.getWeather") getWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```php
-function getWeather(
-        $cityName,
-        $countryName)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$cityName = 'CityName';
-$countryName = 'CountryName';
-
-$result = $globalWeatherHttpGet->getWeather($cityName, $countryName);
-
-```
-
-
-### <a name="get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.getCitiesByCountry") getCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```php
-function getCitiesByCountry($countryName)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$countryName = 'CountryName';
-
-$result = $globalWeatherHttpGet->getCitiesByCountry($countryName);
-
-```
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_post_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpPostController") GlobalWeatherHttpPostController
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherHttpPostController ``` class can be accessed from the API Client.
-
-```php
-$globalWeatherHttpPost = $client->getGlobalWeatherHttpPost();
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.createGetWeather") createGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```php
-function createGetWeather(
-        $cityName,
-        $countryName)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$cityName = 'CityName';
-$countryName = 'CountryName';
-
-$result = $globalWeatherHttpPost->createGetWeather($cityName, $countryName);
-
-```
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```php
-function createGetCitiesByCountry($countryName)
-```
-
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```php
-$countryName = 'CountryName';
-
-$result = $globalWeatherHttpPost->createGetCitiesByCountry($countryName);
+$bibcode = 'bibcode';
+$dbKey = 'db_key';
+$dataType = 'data_type';
+
+$result = $bibcodeQueryBinding->getBibcode($bibcode, $dbKey, $dataType);
 
 ```
 

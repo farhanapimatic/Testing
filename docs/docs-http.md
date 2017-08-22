@@ -1,24 +1,17 @@
 # 
 
+this is not the way we think.
 
 
-## Server Configuration for Base URLs
 
-This section provides details on the environments available and lists down the servers in each of the environment. The default environment for this API is set to `production` while the default server is set to `GlobalWeatherSoap`.
-### Environments
+## Base URL
 
-An environment consists of a set of servers with base URL values. The environment can be changed programatically allowing rapid switching between different environments e.g.the user can specify a Production and Testing Environment.The available environments for this API are: 
+The Base URL for this API is `http://adsabs.harvard.edu/`
 
-#### production
-The environment comprises of the following servers: 
 
-| Name | Base URL | 
-|-----------|-------------|
-| GlobalWeatherSoap | http://www.webservicex.com/globalweather.asmx |
-| GlobalWeatherSoap12 | http://www.webservicex.com/globalweather.asmx |
-| GlobalWeatherHttpGet | http://www.webservicex.com/globalweather.asmx |
-| GlobalWeatherHttpPost | http://www.webservicex.com/globalweather.asmx |
 
+## Authentication
+This API uses `OAuth v2.0` with `bearer token`.
 
 
 
@@ -27,338 +20,75 @@ The environment comprises of the following servers:
 
 # <a name="api_reference"></a>API Reference
 
-* [GlobalWeatherSoap](#global_weather_soap)
-* [GlobalWeatherSoap12](#global_weather_soap12)
-* [GlobalWeatherHttpGet](#global_weather_http_get)
-* [GlobalWeatherHttpPost](#global_weather_http_post)
+* [BibcodeQueryBinding](#bibcode_query_binding)
 
-## <a name="global_weather_soap"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "GlobalWeatherSoap") GlobalWeatherSoap
+## <a name="bibcode_query_binding"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "BibcodeQueryBinding") BibcodeQueryBinding
 
 
-### <a name="get_weather"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetWeather") GetWeather
+### <a name="get_bibcode"></a>![Endpoint: ](https://apidocs.io/img/method.png "getBibcode") getBibcode
 
 
-**`POST`** `/GetWeather`
+**`GET`** `/cgi-bin/nph-bib_query`
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 
 
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `getweathersoapin` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "parameters": {
-    "CityName": "CityName",
-    "CountryName": "CountryName"
-  }
-}
-``` 
-
-#### Responses
-**200** 
-
-Body (_GetWeatherSoapOut_) 
-```
-{
-  "parameters": {
-    "GetWeatherResult": "GetWeatherResult"
-  }
-}
-```
-
-
-### <a name="get_cities_by_country"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetCitiesByCountry") GetCitiesByCountry
-
-
-**`POST`** `/GetCitiesByCountry`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `getcitiesbycountrysoapin` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "parameters": {
-    "CountryName": "CountryName"
-  }
-}
-``` 
-
-#### Responses
-**200** 
-
-Body (_GetCitiesByCountrySoapOut_) 
-```
-{
-  "parameters": {
-    "GetCitiesByCountryResult": "GetCitiesByCountryResult"
-  }
-}
-```
-
-
-[Back to API Reference](#api_reference)
-
-## <a name="global_weather_soap12"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "GlobalWeatherSoap12") GlobalWeatherSoap12
-
-
-### <a name="get_weather"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetWeather") GetWeather
-
-
-**`POST`** `/GetWeather`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-#### Base URL
-This endpoint uses server `GlobalWeatherSoap12`.
-
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `getweathersoapin` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "parameters": {
-    "CityName": "CityName",
-    "CountryName": "CountryName"
-  }
-}
-``` 
-
-#### Responses
-**200** 
-
-Body (_GetWeatherSoapOut_) 
-```
-{
-  "parameters": {
-    "GetWeatherResult": "GetWeatherResult"
-  }
-}
-```
-
-
-### <a name="get_cities_by_country"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetCitiesByCountry") GetCitiesByCountry
-
-
-**`POST`** `/GetCitiesByCountry`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-#### Base URL
-This endpoint uses server `GlobalWeatherSoap12`.
-
-#### Request Headers
->Accept=application/json;
->Content-Type=application/json;
-
-#### Request Body
-Raw 
-
-|  Type | Tags | Description |
-| ------| ---- |-------------| 
-| `getcitiesbycountrysoapin` |  ``` Required ```  | TODO: Add a parameter description | 
-
- Example 
-``` 
-{
-  "parameters": {
-    "CountryName": "CountryName"
-  }
-}
-``` 
-
-#### Responses
-**200** 
-
-Body (_GetCitiesByCountrySoapOut_) 
-```
-{
-  "parameters": {
-    "GetCitiesByCountryResult": "GetCitiesByCountryResult"
-  }
-}
-```
-
-
-[Back to API Reference](#api_reference)
-
-## <a name="global_weather_http_get"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "GlobalWeatherHttpGet") GlobalWeatherHttpGet
-
-
-### <a name="get_weather"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetWeather") GetWeather
-
-
-**`GET`** `//GetWeather`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-#### Base URL
-This endpoint uses server `GlobalWeatherHttpGet`.
 
 #### Query Parameters
 | Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| CityName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CityName"` | 
-| CountryName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CountryName"` | 
+|-----------|------| ---- |-------------| -------------------------------- |
+| bibcode | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"bibcode"` | 
+| db_key | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"db_key"` | 
+| data_type | [string](#api_types) |  ``` Required ```  | TODO: Add a parameter description | `"data_type"` | 
 
 #### Responses
 **200** 
 
-Body (_GetWeatherHttpGetOut_) 
+
+Body ([returnBibcode](#return_bibcode)) 
 ```
 {
-  "Body": "Body"
-}
-```
-
-
-### <a name="get_cities_by_country"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetCitiesByCountry") GetCitiesByCountry
-
-
-**`GET`** `//GetCitiesByCountry`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-#### Base URL
-This endpoint uses server `GlobalWeatherHttpGet`.
-
-#### Query Parameters
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| CountryName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CountryName"` | 
-
-#### Responses
-**200** 
-
-Body (_GetCitiesByCountryHttpGetOut_) 
-```
-{
-  "Body": "Body"
+  "body": "body"
 }
 ```
 
 
 [Back to API Reference](#api_reference)
 
-## <a name="global_weather_http_post"></a>![Endpoint Group: ](https://apidocs.io/img/class.png "GlobalWeatherHttpPost") GlobalWeatherHttpPost
+## <a name="api_types"></a>![Models: ](https://apidocs.io/img/class.png "API Types") API Types
+
+This section provides details on the available types. The primitive types available are:
+
+| Type | Example |
+| ---- | -------- |
+| **string** | `hello world` |
+| **boolean** |	`true` |
+| **number** | `1` |
+| **precision** | `1.5` |
+| **datetime** | `2016-03-13T12:52:32.123Z` |
+| **date** | `2016-03-13` |
+|**void** | |
+| **dynamic** | |
+| **binary** | |
+| **long** | `12345678910` |
+| **file** | |
+| **uuid** | `0f8fad5b-d9cb-469f-a165-70867728950e` |
 
 
-### <a name="get_weather"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetWeather") GetWeather
+In addition to the above types, the following complex types are also available:
+### <a name="return_bibcode"></a>![Model: ](https://apidocs.io/img/method.png "returnBibcode") returnBibcode
 
 
-**`POST`** `//GetWeather`
 
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 
-#### Base URL
-This endpoint uses server `GlobalWeatherHttpPost`.
-
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
-
-#### Request Body
-Url Encoded
-
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| CityName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CityName"` | 
-| CountryName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CountryName"` | 
-
-#### Responses
-**200** 
-
-Body (_GetWeatherHttpPostOut_) 
-```
-{
-  "Body": "Body"
-}
-```
 
 
-### <a name="get_cities_by_country"></a>![Endpoint: ](https://apidocs.io/img/method.png "GetCitiesByCountry") GetCitiesByCountry
-
-
-**`POST`** `//GetCitiesByCountry`
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-#### Base URL
-This endpoint uses server `GlobalWeatherHttpPost`.
-
-#### Request Headers
->Content-Type=application/x-www-form-urlencoded;
-
-#### Request Body
-Url Encoded
-
-| Parameter | Type | Tags | Description | Example |
-|-----------|------| ---- |-------------| ------- |
-| CountryName | `string` |  ``` Required ```  | TODO: Add a parameter description | `"CountryName"` | 
-
-#### Responses
-**200** 
-
-Body (_GetCitiesByCountryHttpPostOut_) 
-```
-{
-  "Body": "Body"
-}
-```
-
-
-[Back to API Reference](#api_reference)
+| Name | Type | Tags | Description |
+|-----------|------| ---- |-------------| 
+| body | [string](#api_types) |  ``` Required ```  | TODO: Add a property description |
 

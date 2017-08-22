@@ -1,5 +1,7 @@
 # Getting started
 
+this is not the way we think.
+
 ## How to Build
 
 The generated SDK relies on [Node Package Manager](https://www.npmjs.com/) (NPM) being available to resolve dependencies. If you don't already have NPM installed, please go ahead and follow instructions to install NPM from [here](https://nodejs.org/en/download/).
@@ -11,7 +13,7 @@ To check if node and npm have been successfully installed, write the following c
 * `node --version`
 * `npm -version`
 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=GlobalWeather-Node)
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=BibcodeQuery-Node)
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 
@@ -19,13 +21,13 @@ Now use npm to resolve all dependencies by running the following command in the 
 npm install
 ```
 
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=GlobalWeather-Node)
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=BibcodeQuery-Node)
 
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
 This will install all dependencies in the `node_modules` folder.
 
-Once dependencies are resolved, you will need to move the folder `GlobalWeatherLib ` in to your `node_modules` folder.
+Once dependencies are resolved, you will need to move the folder `BibcodeQueryLib ` in to your `node_modules` folder.
 
 ## How to Use
 
@@ -40,7 +42,7 @@ Click on `File` and select `Open Folder`.
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=GlobalWeather-Node)
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=BibcodeQuery-Node)
 
 ### 2. Creating a Test File
 
@@ -52,9 +54,9 @@ var lib = require('lib');
 
 Save changes.
 
-![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=GlobalWeather-Node)
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=BibcodeQuery-Node)
 
-![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=GlobalWeather-Node)
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=BibcodeQuery-Node)
 
 ### 3. Running The Test File
 
@@ -64,7 +66,7 @@ To run the `index.js` file, open up the command prompt and navigate to the Path 
 node index.js
 ```
 
-![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=GlobalWeather-Node)
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=BibcodeQuery-Node)
 
 
 ## How to Test
@@ -85,21 +87,30 @@ Tests can be run in a number of ways:
 ### Method 3 (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
-2. Type `mocha  GlobalWeatherController`  to run all the tests in that controller file.
+2. Type `mocha  BibcodeQueryController`  to run all the tests in that controller file.
 
 > To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
 
-![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=GlobalWeatherController)
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=BibcodeQueryController)
 
 ## Initialization
 
-### 
+### Authentication
+In order to setup authentication in the API client, you need the following information.
+
+| Parameter | Description |
+|-----------|-------------|
+| oAuthAccessToken | OAuth 2.0 Access Token |
+
+
 
 API client can be initialized as following:
 
 ```JavaScript
 const lib = require('lib');
 
+// Configuration parameters and credentials
+lib.Configuration.oAuthAccessToken = "oAuthAccessToken"; // OAuth 2.0 Access Token
 
 ```
 
@@ -109,36 +120,35 @@ const lib = require('lib');
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [GlobalWeatherSoapController](#global_weather_soap_controller)
-* [GlobalWeatherSoap12Controller](#global_weather_soap12_controller)
-* [GlobalWeatherHttpGetController](#global_weather_http_get_controller)
-* [GlobalWeatherHttpPostController](#global_weather_http_post_controller)
+* [BibcodeQueryBindingController](#bibcode_query_binding_controller)
 
-## <a name="global_weather_soap_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoapController") GlobalWeatherSoapController
+## <a name="bibcode_query_binding_controller"></a>![Class: ](https://apidocs.io/img/class.png ".BibcodeQueryBindingController") BibcodeQueryBindingController
 
 ### Get singleton instance
 
-The singleton instance of the ``` GlobalWeatherSoapController ``` class can be accessed from the API Client.
+The singleton instance of the ``` BibcodeQueryBindingController ``` class can be accessed from the API Client.
 
 ```javascript
-var controller = lib.GlobalWeatherSoapController;
+var controller = lib.BibcodeQueryBindingController;
 ```
 
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.createGetWeather") createGetWeather
+### <a name="get_bibcode"></a>![Method: ](https://apidocs.io/img/method.png ".BibcodeQueryBindingController.getBibcode") getBibcode
 
 > *Tags:*  ``` Skips Authentication ``` 
 
-> Get weather report for all major cities around the world.
+> TODO: Add a method description
 
 
 ```javascript
-function createGetWeather(body, callback)
+function getBibcode(bibcode, dbKey, dataType, callback)
 ```
 #### Parameters
 
 | Parameter | Tags | Description |
 |-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
+| bibcode |  ``` Required ```  | TODO: Add a parameter description |
+| dbKey |  ``` Required ```  | TODO: Add a parameter description |
+| dataType |  ``` Required ```  | TODO: Add a parameter description |
 
 
 
@@ -146,273 +156,11 @@ function createGetWeather(body, callback)
 
 ```javascript
 
-    var body = new GetWeatherSoapIn({"key":"value"});
-
-    controller.createGetWeather(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoapController.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```javascript
-function createGetCitiesByCountry(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new GetCitiesByCountrySoapIn({"key":"value"});
-
-    controller.createGetCitiesByCountry(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_soap12_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherSoap12Controller") GlobalWeatherSoap12Controller
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherSoap12Controller ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.GlobalWeatherSoap12Controller;
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.createGetWeather") createGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```javascript
-function createGetWeather(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new GetWeatherSoapIn({"key":"value"});
-
-    controller.createGetWeather(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherSoap12Controller.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```javascript
-function createGetCitiesByCountry(body, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| body |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var body = new GetCitiesByCountrySoapIn({"key":"value"});
-
-    controller.createGetCitiesByCountry(body, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_get_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpGetController") GlobalWeatherHttpGetController
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherHttpGetController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.GlobalWeatherHttpGetController;
-```
-
-### <a name="get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.getWeather") getWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```javascript
-function getWeather(cityName, countryName, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var cityName = 'CityName';
-    var countryName = 'CountryName';
-
-    controller.getWeather(cityName, countryName, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpGetController.getCitiesByCountry") getCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```javascript
-function getCitiesByCountry(countryName, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var countryName = 'CountryName';
-
-    controller.getCitiesByCountry(countryName, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-[Back to List of Controllers](#list_of_controllers)
-
-## <a name="global_weather_http_post_controller"></a>![Class: ](https://apidocs.io/img/class.png ".GlobalWeatherHttpPostController") GlobalWeatherHttpPostController
-
-### Get singleton instance
-
-The singleton instance of the ``` GlobalWeatherHttpPostController ``` class can be accessed from the API Client.
-
-```javascript
-var controller = lib.GlobalWeatherHttpPostController;
-```
-
-### <a name="create_get_weather"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.createGetWeather") createGetWeather
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get weather report for all major cities around the world.
-
-
-```javascript
-function createGetWeather(cityName, countryName, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| cityName |  ``` Required ```  | TODO: Add a parameter description |
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var cityName = 'CityName';
-    var countryName = 'CountryName';
-
-    controller.createGetWeather(cityName, countryName, function(error, response, context) {
-
-    
-    });
-```
-
-
-
-### <a name="create_get_cities_by_country"></a>![Method: ](https://apidocs.io/img/method.png ".GlobalWeatherHttpPostController.createGetCitiesByCountry") createGetCitiesByCountry
-
-> *Tags:*  ``` Skips Authentication ``` 
-
-> Get all major cities by country name(full / part).
-
-
-```javascript
-function createGetCitiesByCountry(countryName, callback)
-```
-#### Parameters
-
-| Parameter | Tags | Description |
-|-----------|------|-------------|
-| countryName |  ``` Required ```  | TODO: Add a parameter description |
-
-
-
-#### Example Usage
-
-```javascript
-
-    var countryName = 'CountryName';
-
-    controller.createGetCitiesByCountry(countryName, function(error, response, context) {
+    var bibcode = 'bibcode';
+    var dbKey = db_key;
+    var dataType = data_type;
+
+    controller.getBibcode(bibcode, dbKey, dataType, function(error, response, context) {
 
     
     });
